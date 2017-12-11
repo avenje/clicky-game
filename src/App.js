@@ -88,11 +88,7 @@ class App extends Component {
         <Title>Clicky Game</Title>
         <h1 score={this.state.score} highscore={this.state.highScore} />
         {this.state.friends.map((target) => {
-          return <FriendCard
-            {...target}
-            key={target.id}
-            friends={this.friends}
-            shuffleFriends= {() => {this.shuffleFriends(this.state.friends)}}
+          return <FriendCard {...target} key={target.id} friends={this.friends} shuffleFriends= {() => {this.shuffleFriends(this.state.friends)}}
           />
         })}
       </Wrapper>
