@@ -38,9 +38,9 @@ class App extends Component {
       if(target.id === id) {
         if(target.clicked) {
           console.log("you lose");
-            alert("You lost by clicking on the same card twice!/n" +
+          alert("You lost by clicking on the same card twice!/n" +
           "Final Score: " + this.state.score);
-          this.gameReset();
+          this.newGame();
           return false;
         }
         else {
@@ -61,6 +61,13 @@ class App extends Component {
     }),
   () => this.winChecker() );
   };
+
+  newHighScore = () => {
+    console.log("newHighScore");
+    this.setState((newState) => {
+      score: newState.score + 1
+    }), () => this.winChecker();
+  }
 
   winChecker = () => {
     console.log("winsChecker");
@@ -88,7 +95,7 @@ class App extends Component {
         <Title>Clicky Game</Title>
         <h1 score={this.state.score} highscore={this.state.highScore} />
         {this.state.friends.map((target) => {
-          return <FriendCard {...target} key={target.id} friends={this.friends} shuffleFriends= {() => {this.shuffleFriends(this.state.friends)}}
+          return <FriendCard {...target} key={target.id} clickFriends={this.clickFriends} shuffleFriends= {() => {this.shuffleFriends(this.state.friends)}}
           />
         })}
       </Wrapper>
