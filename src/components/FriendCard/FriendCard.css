@@ -33,15 +33,10 @@
   margin-top: 18px;
 }
 
-.card > .remove {
-  color: #ff1744;
-  font-size: 48px;
-  position: absolute;
-  top: -20px;
-  right: 5px;
-  cursor: pointer;
+.img-container :hover {
+  color: #d50000;
 }
 
-.card > .remove:hover {
+.img-container > .remove:hover {
   color: #d50000;
 }

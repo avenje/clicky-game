@@ -76,7 +76,7 @@ class App extends Component {
         this.newGame();
     }
     else {
-      setTimeout(() => this.shuffleFriends(this.state.friends), 500);
+      setTimeout(() => this.shuffleFriends(this.state.friends), 200);
     }
   };
 
